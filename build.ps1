@@ -80,6 +80,16 @@ $FUNNELS = @(
     splitFamily='^SIP-L22(-\d+)?$'; splitFrom='2026-11-09'
     campExclude='\|\s*E3-AQC\s*\|'
     goalSpend=30000; goalDate='2026-11-23' }   # 20/11: meta corrigida p/ R$ 30 mil ate segunda 23/11 (era 20 mil; card de pacing no topo do Funil)
+  # 24/11: 4a leva do L22 (tag SIP-L22-4; 1o lead 23/11 15:35 BRT). Conta desde 23/11: o gasto do dia da virada
+  # e dividido com o L22-3 por anuncio/campanha (SplitMul). Meta R$ 30 mil ate segunda 30/11.
+  [ordered]@{ key='l22d'; label='SIP-L22-4';
+    queriesId='17xTn-w1F3gaJqrgrQjPLqZi2Nt4x1-i0_AUhs2hz7Cc'; metaGid='203'; googleGid='204';
+    leadsId='1xrHSoS1bg5O8VL22AFv1FY2xuWHnpHrsY_R3lzXhJ70';   leadsGid='1446265479'
+    tagMust='^SIP-L22-4$'
+    dateFrom='2026-11-23'
+    splitFamily='^SIP-L22(-\d+)?$'; splitFrom='2026-11-09'
+    campExclude='\|\s*E3-AQC\s*\|'
+    goalSpend=30000; goalDate='2026-11-30' }
 )
 # teste local: -Only l22b,l22c roda so esses funis (o workflow chama sem -Only = todos)
 if($Only){ $onlyKeys=@($Only -split ',' | ForEach-Object { $_.Trim() }); $FUNNELS=@($FUNNELS | Where-Object { $onlyKeys -contains $_.key }) }

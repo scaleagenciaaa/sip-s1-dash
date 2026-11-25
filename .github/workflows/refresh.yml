@@ -1,8 +1,8 @@
-name: Refresh SIP-S1 (3h)
+name: Refresh SIP-S1 (30 min)
 
 on:
   schedule:
-    - cron: '51 */3 * * *'   # 24/11/2026: org nova scaleagenciaaa, horario proprio (dashes nao rodam juntas)
+    - cron: '11,41 * * * *'  # 25/11/2026: a cada 30 min (pedido do usuario) em :11 e :41 - minutos livres das outras dashes da org
   workflow_dispatch:          # gatilho confiavel = cron-job.org faz POST aqui
 
 permissions:

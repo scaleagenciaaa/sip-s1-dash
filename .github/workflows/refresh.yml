@@ -2,7 +2,7 @@ name: Refresh SIP-S1 (30 min)
 
 on:
   schedule:
-    - cron: '11,41 * * * *'   # 25/11/2026: a cada 30 min (pedido do cliente), minuto proprio
+    - cron: '11 */3 * * *'   # reserva: o disparo principal e o cron-job.org (30 em 30 min)
   workflow_dispatch:          # gatilho confiavel = cron-job.org faz POST aqui
 
 permissions:
